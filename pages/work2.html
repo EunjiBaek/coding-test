@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
+    />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <style>
+      html,
+      body {
+        margin: 0;
+        height: 100%;
+        overflow: hidden;
+      }
+      #wrap {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      .section {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 20px;
+      }
+      #select_point_type,
+      #inquiryPoint {
+        width: 200px;
+        height: 35px;
+        box-sizing: border-box;
+        margin-right: 10px;
+      }
+      button {
+        width: 100px;
+        height: 35px;
+      }
+
+      #list li {
+        margin-bottom: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrap">
+      <div class="section">
+        <div>
+          <select id="select_point_type">
+            <option value="">포인트타입</option>
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+            <option value="D">D</option>
+            <option value="E">E</option>
+            <option value="F">F</option>
+            <option value="G">G</option>
+          </select>
+
+          <button id="btn_getWorkPoint" type="button">포인트조회</button>
+        </div>
+        <p style="margin-top: 10px;">포인트 잔액 : <span id="myPoint">0</span>p</p>
+      </div>
+
+      <div class="section">
+        <div>
+            <input id="inquiryPoint" type="text" class="inquiryPoint"></input>
+            <button id="point-input-btn">사용</button>
+        </div>
+        <ul id="list" style="margin-top: 10px;">
+            <li>주문금액 : <span id="orderAmt"></span>원</li>
+            <li>사용 포인트 : <span id="usePoint">0</span>원</li>
+            <li style="color: red;">총 결제 금액 : <span id="total">0</span>원</li>
+        </ul>
+        
+      </div>
+    </div>
+
+    <input id="useMaxPoint" type="hidden">
+    <input id="useMinPoint" type="hidden">
+    <input id="useUnitPoint" type="hidden">
+
+  
+    <script src="../js/pointUse.js"></script>
+  </body>
+</html>

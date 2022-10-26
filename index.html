@@ -1,16 +1,101 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    <!--mobileSelect.js import-->
-    <script src="../js/mobileSelect.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="./css/mobile-select.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
+    />
+    <script src="./js/mobileSelect.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
+    <style>
+      html,
+      body {
+        margin: 0;
+        height: 100%;
+        overflow: hidden;
+      }
+      #wrap {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .select-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0 15px;
+      }
+
+      .select-wrap > div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 200px;
+        height: 50px;
+        padding: 0 20px;
+        border-radius: 50px;
+        border: 1px solid #ccc;
+        color: #ccc;
+        box-sizing: border-box;
+      }
+      .select-wrap > div > i {
+        color: #333;
+      }
+
+      .date_btn_wrap {
+        display: flex;
+        align-items: flex-start;
+        margin: 20px 0 30px 0;
+      }
+      .date_btn_wrap > button:first-child {
+        margin-right: 10px;
+      }
+      .date_btn_wrap > button {
+        width: 150px;
+        height: 35px;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="./pages/work2.html">포인트조회로이동</a>
     <!-- test p tag -->
-    <p id="test">test</p>
-</body>
+    <div id="wrap">
+      <div class="select-wrap">
+        <div id="select-day-wrap">
+          <span id="select-day">날짜선택</span>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+
+        <div id="select-time-wrap">
+          <span id="select-time">시간선택</span>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+      </div>
+      <div class="date_btn_wrap">
+        <button id="btn_getWorkPointUseHistory" type="submit">날짜확인</button>
+        <button id="btn_init" type="button">초기화</button>
+      </div>
+
+      <p>
+        선택한 날짜 데이터 확인: <span id="date-day-text"></span>
+        <span id="date-time-text"></span>
+      </p>
+    </div>
+
+    <script src="./js/common.js"></script>
+  </body>
 </html>
